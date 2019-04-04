@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration>
+    <!--<appender name="Sentry" class="com.getsentry.raven.logback.SentryAppender">-->
+    <appender name="Sentry" class="io.sentry.logback.SentryAppender">
+        <!--每个项目生成不通的key-->
+        <dsn>http://f6258f323dbb465ea17f35bb2ee447cd:2bb23d8f77904fa1be54af08933100ba@sentry.qfang.com/2</dsn>
+        <!--<dsn>http://f6258f323dbb465ea17f35bb2ee447cd@sentry.qfang.com/2</dsn>-->
+         <!--设置拦截的最低级别为error-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="Sentry"/>
+    </root>
+</configuration>
